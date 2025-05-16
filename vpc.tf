@@ -1,20 +1,22 @@
 provider "aws" {
-  region     = "us-east-1"
+  region = "us-east-1"
 }
 
 terraform {
   backend "s3" {
-    bucket         = "githubbucket91"
-    key            = "terraform/terraform.tfstate"
-    region         = "us-east-1"
-  } 
+    bucket     = "githubbucket91"
+    key        = "terraform/terraform.tfstate"
+    region     = "us-east-1"
+    access_key = var.aws_access_key
+    secret_key = var.aws_secret_key
+  }
 }
 
 variable "aws_access_key" {
-  type        = string
+  type = string
 }
 variable "aws_secret_key" {
-  type        = string
+  type = string
 }
 
 resource "aws_vpc" "main_vpc" {
