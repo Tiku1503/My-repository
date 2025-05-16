@@ -13,7 +13,7 @@ jobs:
           terraform_version: 1.1.7
 
       - name: Terraform Initialize
-        run:  terraform init -backend-config="aws_access_key=${{ secrets.AWS_ACCESS_KEY }}" -backend-config="aws_secret_key=${{ secrets.AWS_SECRET_KEY }}" 
+        run:  terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_KEY }}" 
         
         
      
