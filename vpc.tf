@@ -7,7 +7,7 @@ terraform {
     bucket         = "githubbucket91"
     key            = "terraform/terraform.tfstate"
     region         = "us-east-1"
-  }
+  } 
 }
 
 variable "aws_access_key" {
