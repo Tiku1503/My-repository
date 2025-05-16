@@ -4,14 +4,14 @@ provider "aws" {
   secret_key = var.aws_secret_key
 }
 
-terraform {
-  backend "s3" {
-    bucket     = "githubbucket91"
-    key        = "terraform/terraform.tfstate"
-    region     = "us-east-1"
+# terraform {
+#   backend "s3" {
+#     bucket     = "githubbucket91"
+#     key        = "terraform/terraform.tfstate"
+#     region     = "us-east-1"
    
-  }
-}
+#   }
+# }
 
 variable "aws_access_key" {
   type = string
