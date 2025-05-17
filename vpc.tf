@@ -38,3 +38,15 @@ resource "aws_subnet" "private_subnet" {
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1b"
 }
+
+
+resource "aws_ecr_repository" "my_ecr_repo" {
+  name                 = "ecr-container-repo"
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+}
+
+output "repository_url" {
+  value = aws_ecr_repository.my_ecr_repo.repository_url
+}
